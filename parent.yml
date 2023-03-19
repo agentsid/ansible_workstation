@@ -7,7 +7,7 @@
     - secret.yml
   tasks:
     - name: Ansible shell 
-      shell: "{{shell}}"
+      shell: whoami #"{{shell}}"
       become: yes
       register: shellout
     - name: debug shell out
