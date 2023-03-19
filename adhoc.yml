@@ -12,3 +12,5 @@ ansible washington1.example.com --list-hosts
 ansible all --list-hosts
 
 ansible ungrouped --list-hosts
+
+ansible all -i <file_name> --list-hosts
