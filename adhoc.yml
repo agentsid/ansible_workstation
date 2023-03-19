@@ -1,2 +1,10 @@
 ansible-navigator inventory -m stdout --list
 
+# v8.4
+#adhoc commands
+
+ansible -m setup localhost | grep ansible_python_version
+
+
+ansible washington1.example.com --list-hosts
+
