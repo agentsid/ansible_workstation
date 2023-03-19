@@ -2,8 +2,7 @@
 
 - name: Running Anisble builtin shell command
   ansible.builtin.shell: whoami #"{{shell}}"
-  register: shellout
-  become: true
+  register: out
 - name: Debug shellout
   debug:
-    msg: "{{shellout}}"
+    msg: "{{out}}"
