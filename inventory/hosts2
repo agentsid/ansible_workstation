@@ -1,11 +1,11 @@
 all:
   hosts:
-    localhost:
+    172.17.0.2:
   children:
     ubuntu:
       hosts:
-        localhost:
+        172.17.0.2:
     windows:
       hosts:
-        localhost:
+        172.17.0.2:
         
