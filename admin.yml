@@ -11,7 +11,7 @@
       - name: Include task 1  
         ansible.builtin.include_tasks: "shell.yml"
         #become: yes
-        register: shellout
+        register: shellout1
       - name: debug shell out
         debug:
-          msg: "{{shellout}}"
+          msg: "{{shellout1}}"
