@@ -6,19 +6,19 @@ become: yes
 vars:
 tasks:
   name: Block-1 
-    block:
-      name: Run tasks/other.yaml instead of 'main'
-      include_role:
-        name: shell
-       # tasks_from: other
-  
+  block:
+    name: Run tasks/other.yaml instead of 'main'
+    include_role:
+      name: shell
+      # tasks_from: other
 
-      #  - name: 
-      #    ansible.builtin.:
-           
 
-      #  - name: 
-      #    ansible.builtin.:
-           
-      when: ansible_facts['distribution'] == 'ubuntu'
+    #  - name: 
+    #    ansible.builtin.:
+          
+
+    #  - name: 
+    #    ansible.builtin.:
+          
+    when: ansible_facts['distribution'] == 'ubuntu'
     
