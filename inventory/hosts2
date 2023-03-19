@@ -1,13 +1,11 @@
 all:
   hosts:
-    mail.example.com:
+    localhost:
   children:
-    webservers:
+    ubuntu:
       hosts:
-        foo.example.com:
-        bar.example.com:
-    dbservers:
+        localhost:
+    windows:
       hosts:
-        one.example.com:
-        two.example.com:
-        three.example.com:
+        localhost:
+        
