@@ -5,6 +5,12 @@
   become: yes
   vars_files:
     - secret.yml
+  tasks:
+    - name: Ansible shell 
+      shell: whoami
+      
+
+
   
 
         
