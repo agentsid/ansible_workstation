@@ -10,6 +10,7 @@
       name: Run tasks/other.yaml instead of 'main'
       include_role:
         name: shell
+      when: ansible_facts['distribution'] == 'ubuntu'
         # tasks_from: other
 
 
@@ -20,5 +21,4 @@
       #  - name: 
       #    ansible.builtin.:
             
-      when: ansible_facts['distribution'] == 'ubuntu'
     
