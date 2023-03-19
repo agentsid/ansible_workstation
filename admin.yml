@@ -17,4 +17,9 @@
         register: stdout
         no_log: true
       - debug: msg="{{stdout.stdout}}"
+    
+
+
+    - name: Include tasks
+      include_tasks: shell.yml 
       
