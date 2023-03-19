@@ -8,11 +8,13 @@
   tasks:
     - name: Block 1 
       block:
-      - name: This is Admin 
+      - name: <-> 
         debug:
-          msg: " this is administrator playbook"
-      - name: checking root user access
+          msg: "Engineer playbook"
+      - name: >
+          checking root user
         shell: whoami
         register: stdout
-      - debug: msg="{{stdout}}"
+        no_log: true
+      - debug: msg="{{stdout.stdout}}"
       
