@@ -11,10 +11,10 @@
       - name: Ansible shell 
         shell: whoami #"{{shell}}"
         become: yes
-        register: shellout
+        register: shellout1
       - name: debug shell out
         debug:
-          msg: "{{shellout}}"
+          msg: "{{shellout1}}"
 
 
 
