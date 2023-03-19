@@ -21,5 +21,6 @@
 
 
     - name: Include tasks
-      include_tasks: /tasks/shell.yml 
+      include_role: 
+        name: shell
       
