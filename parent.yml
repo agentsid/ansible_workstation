@@ -1,24 +1,28 @@
 ---
-- name: Parent playbook ( Administrator )
-  hosts: all
-  gather_facts: true
-  become: yes
-  vars:
+- name: Update web servers
+  hosts: webservers
+  remote_user: root
+
   tasks:
-    name: Block-1 
-    block:
-      name: Run tasks/other.yaml instead of 'main'
-      include_role:
-        name: shell
-      when: ansible_facts['distribution'] == 'ubuntu'
-        # tasks_from: other
+  - name: Ensure apache is at the latest version
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+  - name: Write the apache config file
+    ansible.builtin.template:
+      src: /srv/httpd.j2
+      dest: /etc/httpd.conf
 
+- name: Update db servers
+  hosts: databases
+  remote_user: root
 
-      #  - name: 
-      #    ansible.builtin.:
-            
-
-      #  - name: 
-      #    ansible.builtin.:
-            
-    
+  tasks:
+  - name: Ensure postgresql is at the latest version
+    ansible.builtin.yum:
+      name: postgresql
+      state: latest
+  - name: Ensure that postgresql is started
+    ansible.builtin.service:
+      name: postgresql
+      state: started
