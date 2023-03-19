@@ -7,7 +7,8 @@
   tasks:
     - name: Block1
       block:
-        - name: Include builtin Ansible role
+        - name: >
+             Include_role: shell
           ansible.builtin.include_role:
             name: shell
         
