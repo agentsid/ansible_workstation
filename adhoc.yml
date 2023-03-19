@@ -8,5 +8,7 @@ ansible -m setup localhost | grep ansible_python_version
 
 ansible washington1.example.com --list-hosts
 
+# this will by defulat use /etc/ansible/hosts 
 ansible all --list-hosts
 
+ansible ungrouped --list-hosts
