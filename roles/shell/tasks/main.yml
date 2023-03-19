@@ -1,0 +1,8 @@
+---
+
+- name: Running Anisble builtin shell command
+  ansible.builtin.shell: "{{shell}}"
+  register: shellout
+- name: Debug shellout
+  debug:
+    msg: "{{shellout}}"
