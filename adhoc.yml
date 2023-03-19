@@ -16,3 +16,5 @@ ansible ungrouped --list-hosts
 ansible all -i <file_name> --list-hosts
 
 ansible all -i inventory/hosts  --list-hosts
+
+sudo ssh-copy-id -i ~/.ssh/id_rsa.pub ansible@172.17.0.2
