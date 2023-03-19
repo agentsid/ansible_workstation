@@ -14,3 +14,5 @@ ansible all --list-hosts
 ansible ungrouped --list-hosts
 
 ansible all -i <file_name> --list-hosts
+
+ansible all -i inventory/hosts  --list-hosts
