@@ -9,9 +9,7 @@
     - name: Block 1 
       block:
       - name: Ansible shell 
-        #shell: whoami #"{{shell}}"
-        include_role: 
-          - name: shell
+        shell: whoami #"{{shell}}"
         become: yes
         register: shellout
       - name: debug shell out
