@@ -1,0 +1,24 @@
+---
+name: Parent playbook ( Administrator )
+hosts: all
+gather_facts: true
+become: yes
+vars:
+tasks:
+  name: Block-1 
+    block:
+      name: Run tasks/other.yaml instead of 'main'
+      include_role:
+        name: shell
+       # tasks_from: other
+  
+
+      #  - name: 
+      #    ansible.builtin.:
+           
+
+      #  - name: 
+      #    ansible.builtin.:
+           
+      when: ansible_facts['distribution'] == 'ubuntu'
+    
