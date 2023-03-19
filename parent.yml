@@ -6,13 +6,15 @@
   vars_files:
     - secret.yml
   tasks:
-    - name: Ansible shell 
-      shell: whoami #"{{shell}}"
-      become: yes
-      register: shellout
-    - name: debug shell out
-      debug:
-        msg: "{{shellout}}"
+    - name: Block 1 
+      block:
+      - name: Ansible shell 
+        shell: whoami #"{{shell}}"
+        become: yes
+        register: shellout
+      - name: debug shell out
+        debug:
+          msg: "{{shellout}}"
 
 
 
