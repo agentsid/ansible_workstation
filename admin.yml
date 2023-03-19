@@ -8,10 +8,11 @@
   tasks:
     - name: Block 1 
       block:
-      - name: Include task 1  
-        ansible.builtin.include_tasks: "shell.yml"
-        #become: yes
-        register: shellout1
-      - name: debug shell out
+      - name: This is Admin 
         debug:
-          msg: "{{shellout1}}"
+          msg: " this is administrator playbook"
+      - name: checking root user access
+        shell: whoami
+        register: stdout
+      - debug: msg="{{stdout}}"
+      
