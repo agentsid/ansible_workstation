@@ -1,6 +1,6 @@
 ---
-name: Parent playbook ( Administrator )
 hosts: all
+name: Parent playbook ( Administrator )
 gather_facts: true
 become: yes
 vars:
