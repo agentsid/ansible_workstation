@@ -3,7 +3,7 @@ RUN echo 'creating ansible worker image'
 RUN apt-get update && apt-get install -y openssh-client && apt-get install python3 -y && apt-get install ansible -y
 RUN useradd -m ansible
 RUN mkdir -p /home/ansible/.ssh
-COPY /home/siddharth/.ssh/id_rsa.pub /home/ansible/.ssh/authorized_keys
+#COPY /home/siddharth/.ssh/id_rsa.pub /home/ansible/.ssh/authorized_keys
 RUN chown -R ansible:ansible /home/ansible/.ssh
 USER ansible
 WORKDIR /home/ansible
