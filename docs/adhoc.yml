@@ -17,7 +17,7 @@ ansible all -i <file_name> --list-hosts
 
 ansible all -i inventory/hosts  --list-hosts
 
-sudo ssh-copy-id -i ~/.ssh/id_rsa.pub ansible@
+sudo ssh-copy-id -i ~/.ssh/id_rsa.pub ansible@172.17.0.3
 
 ansible-playbook admin.yml --extra-vars " role=shell"
 
