@@ -1,8 +1,11 @@
 FROM ubuntu:latest
-RUN apt update -y
-RUN apt install python3 -y 
-RUN apt install openssh-server -y
-RUN apt install openssh-server -y
+RUN echo 'creating ansible worker image'
+RUN apt-get update && apt-get install -y openssh-client && apt-get install python3 -y && apt-get install ansible -y
+RUN useradd -m ansible
+RUN mkdir -p /home/ansible/.ssh
+COPY ~/.ssh/id_rsa.pub /home/ansible/.ssh/authorized_keys
+RUN chown -R ansible:ansible /home/ansible/.ssh
+USER: ansible
+#WORKDIR /home/ansible
+ENTRYPOINT service start ssh
 
-# COPY 
-# ENTRYPOINT 
