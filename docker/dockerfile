@@ -1,6 +1,7 @@
 FROM ubuntu:latest
 RUN echo 'creating ansible worker image'
 RUN apt-get update && apt-get install -y openssh-client && apt-get install python3 -y && apt-get install ansible -y
+Run apt-get install sudo -y && apt-get install vim -y 
 RUN useradd -m ansible
 RUN mkdir -p /home/ansible/.ssh
 #COPY /home/siddharth/.ssh/id_rsa.pub /home/ansible/.ssh/authorized_keys
