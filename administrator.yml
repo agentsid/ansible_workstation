@@ -11,16 +11,10 @@
       - name: <-> 
         debug:
           msg: "Administrator playbook"
-      - name: >
-          checking root user
-        shell: whoami
-        register: stdout
-        no_log: true
-      - debug: msg="{{stdout.stdout}}"
     
 
 
-    - name: Include tasks
+    - name: Include Role
       include_role: 
         name: "{{ role | default('no_role') }}"
       

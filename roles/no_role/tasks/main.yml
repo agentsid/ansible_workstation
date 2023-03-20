@@ -1,4 +1,4 @@
 ---
 - name: No roles passed
   debug:
-    msg: "No roles passed"
+    msg: "No role passed"

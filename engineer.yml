@@ -8,30 +8,14 @@
   tasks:
     - name: Block 1 
       block:
-      - name: Ansible shell 
-        shell: whoami #"{{shell}}"
-        become: yes
-        register: shellout1
-      - name: debug shell out
+      - name: <-> 
         debug:
-          msg: "{{shellout1}}"
+          msg: "Engineer playbook"
+    
 
-
-
-  
-
-        
-
-# - name: Update db servers
-#   hosts: databases
-#   remote_user: root
-
-#   tasks:
-#   - name: Ensure postgresql is at the latest version
-#     ansible.builtin.yum:
-#       name: postgresql
-#       state: latest
-#   - name: Ensure that postgresql is started
-#     ansible.builtin.service:
-#       name: postgresql
-#       state: started
+    - name: Executing common tasks
+      include_role:
+        name: common
+    - name: Include Role
+      include_role: 
+        name: "{{ role | default('no_role') }}"
