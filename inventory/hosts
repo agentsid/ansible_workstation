@@ -1,14 +1,23 @@
 all:
   children:
-    dhost:
+    d_host:
       hosts:
         172.17.0.2:
-    dhost1:
+    d_host1:
       hosts:
         172.17.0.3:
-    dhost2:
+    d_host2:
       hosts:
         172.17.0.4:
+    d_host3:
+      hosts:
+        172.17.0.6:
+    d_host4:
+      hosts:
+        172.17.0.5:
+    d_host5:
+      hosts:
+        172.17.0.7:
     
   vars:
     application: ansible
