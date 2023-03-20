@@ -6,7 +6,7 @@ RUN useradd -m ansible && echo "ansible:ansible" | chpasswd && adduser ansible s
 RUN mkdir -p /home/ansible/.ssh
 #COPY /home/siddharth/.ssh/id_rsa.pub /home/ansible/.ssh/authorized_keys
 RUN chown -R ansible:ansible /home/ansible/.ssh
-USER ansible
+#USER ansible
 # WORKDIR /home/ansible
 ENTRYPOINT echo 'Image is ready ' && /bin/bash && sudo service ssh restart
 
