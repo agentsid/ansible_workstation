@@ -1,0 +1,6 @@
+---
+
+- name: >
+     Executing Anisble Role: common
+  include_tasks:
+     - "{{ (openstack_networks | default({})).id | default(omit) }}"

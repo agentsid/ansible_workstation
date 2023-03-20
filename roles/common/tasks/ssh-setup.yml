@@ -1,0 +1,10 @@
+---
+- name: Ensure key is in root's ~/.ssh/authorized_hosts
+  authorized_key:
+  user: root
+  state: present
+  key: '{{ item }}'
+  with_file:
+  - /home/siddharth/.ssh/id_rsa.pub
+
+#--------------- end of play ---------------#
