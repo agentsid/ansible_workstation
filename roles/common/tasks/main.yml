@@ -2,5 +2,7 @@
 
 - name: >
      Executing Anisble Role: common
-  include_tasks:
-     - "{{ (openstack_networks | default({})).id | default(omit) }}"
+  vars:
+    tasks: ssh-setup
+  include_tasks: ssh-setup.yml
+     

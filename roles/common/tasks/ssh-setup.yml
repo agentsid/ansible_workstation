@@ -1,10 +1,12 @@
 ---
-- name: Ensure key is in root's ~/.ssh/authorized_hosts
+- name: Ensure key is in ansible ~/.ssh/authorized_hosts
   authorized_key:
-  user: root
-  state: present
-  key: '{{ item }}'
+    user: ansible
+    state: present
+    key: '{{ item }}'
   with_file:
   - /home/siddharth/.ssh/id_rsa.pub
+  register: stdout
+- debug: msg="{{stdout}}"
 
 #--------------- end of play ---------------#
