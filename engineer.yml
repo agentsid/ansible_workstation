@@ -1,6 +1,6 @@
 ---
 - name: Engineer playbook
-  hosts: all
+  hosts: "{{ hosts | default('all') }}"
   gather_facts: true
   become: yes
   vars_files:
