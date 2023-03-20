@@ -7,7 +7,6 @@ RUN mkdir -p /home/ansible/.ssh
 #COPY /home/siddharth/.ssh/id_rsa.pub /home/ansible/.ssh/authorized_keys
 RUN chown -R ansible:ansible /home/ansible/.ssh
 USER ansible
-RUN
 # WORKDIR /home/ansible
 ENTRYPOINT echo 'Image is ready ' && /bin/bash && sudo service ssh restart
 
