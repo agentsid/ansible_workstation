@@ -22,5 +22,5 @@
 
     - name: Include tasks
       include_role: 
-        name: "{{role}}"
+        name: "{{ role | default('no_role') }}"
       
