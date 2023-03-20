@@ -1,6 +1,6 @@
 ---
-- name: Admin playbook (in develop)
-  hosts: all
+- name: Administrator playbook
+  hosts: docker
   gather_facts: true
   become: yes
   vars_files:
@@ -10,7 +10,7 @@
       block:
       - name: <-> 
         debug:
-          msg: "Engineer playbook"
+          msg: "Administrator playbook"
       - name: >
           checking root user
         shell: whoami
