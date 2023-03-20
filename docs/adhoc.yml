@@ -20,3 +20,6 @@ ansible all -i inventory/hosts  --list-hosts
 sudo ssh-copy-id -i ~/.ssh/id_rsa.pub ansible@
 
 ansible-playbook admin.yml --extra-vars " role=shell"
+
+# docker commands
+docker build -f dockerfile -t="dockerfile/ubuntu-img" .
