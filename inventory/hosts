@@ -1,10 +1,13 @@
 all:
   children:
-    d_host1:
+    dhost:
       hosts:
         172.17.0.2:
+    dhost1:
+      hosts:
+        172.17.0.3:
     dhost2:
-      host:
+      hosts:
         172.17.0.4:
     
   vars:
