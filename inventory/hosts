@@ -21,6 +21,9 @@ all:
     d_host6:
       hosts:
         172.17.0.8:
+    d_host7:
+      hosts:
+        172.17.0.9:
     
   vars:
     application: ansible
