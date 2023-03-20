@@ -1,8 +1,11 @@
 all:
   children:
-    docker:
+    d_host1:
       hosts:
         172.17.0.2:
+    dhost2:
+      host:
+        172.17.0.4:
     
   vars:
     application: ansible
