@@ -1,9 +1,8 @@
 all:
   children:
-    DEV:
-      D_HOST_DEV:
-        hosts:
-          172.17.0.2:
+    d_host:
+      hosts:
+        172.17.0.2:
     d_host1:
       hosts:
         172.17.0.3:
