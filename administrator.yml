@@ -3,7 +3,10 @@
   hosts: "{{ hosts | default('all') }}"
   gather_facts: true
   vars:
-    empty_vars: { group:'',  
+    #hosts_empty: { group:'', env:''} 
+    group: "{{(group != '' | ternary ({{group}}|upper, ''))}}"
+    env: "{{(env != '' | ternary ({{env}}|upper, ''))}}"
+
   roles:
     - common/parameters/shared/defaults
   # environment: 
