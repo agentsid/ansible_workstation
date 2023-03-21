@@ -1,0 +1,22 @@
+ansible-navigator inventory -m stdout --list
+
+# v8.4
+#adhoc commands
+
+ansible -m setup localhost | grep ansible_python_version
+
+
+ansible washington1.example.com --list-hosts
+
+# this will by defulat use /etc/ansible/hosts 
+ansible all --list-hosts
+
+ansible ungrouped --list-hosts
+
+ansible all -i <file_name> --list-hosts
+
+ansible all -i inventory/hosts  --list-hosts
+
+sudo ssh-copy-id -i ~/.ssh/id_rsa.pub ansible@
+
+ansible-playbook admin.yml --extra-vars " role=shell"
