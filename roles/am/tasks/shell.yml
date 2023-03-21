@@ -1,5 +1,7 @@
 ---
 - name: shell
-  ansible.builtin.shell: "{{shell_input}}"
+  vars:
+    shell: "{{shell_input}}"
+  ansible.builtin.shell: "{{shell}}"
   register: shellout
 - debug: msg="{{shellout}}" 
