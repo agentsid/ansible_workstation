@@ -3,17 +3,25 @@
   hosts: "{{ hosts | default('all') }}"
   gather_facts: true
   become: yes
+  roles:
+    - common/read_vars
+  environment: 
+
+  pre_tasks:
+  
   tasks:
     - name: Block 1 
       block:
-      - name: <-> 
-        debug:
-          msg: "Administrator playbook"
-    
+        - name: <-> 
+          debug:
+            msg: "Administrator playbook"
+        - name: Include Role
+          include_role: 
+            name: "{{ role | default('no_role') }}"
 
 
-    - name: Include Role
-      include_role: 
-        name: "{{ role | default('no_role') }}"
+    # - name: Include Role
+    #   include_role: 
+    #     name: "{{ role | default('no_role') }}"
       
       
