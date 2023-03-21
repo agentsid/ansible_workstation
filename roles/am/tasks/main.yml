@@ -1,8 +1,10 @@
 ---
 
-- name: Running Anisble builtin shell command
-  shell: '{{shell}}' 
-  register: out
-- name: Debug shellout
-  debug:
-    msg: "{{out}}"
+- name: >
+     Executing Anisble Module "{{task}}"
+  include_tasks:
+    file: "{{items|join('')}}"
+  vars:
+    items:
+      - "{{(task == 'ping')|ternary('ping.yml,'')}}"
+      - "{{(task == 'shell')|ternary('shell.yml,'')}}"

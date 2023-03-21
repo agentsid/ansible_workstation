@@ -1,8 +1,10 @@
 ---
 
 - name: >
-     Executing Anisble Role: common
+     Executing Anisble Role: task: "{{ssh-setup}}"
+  include_tasks:
+    file: "{{items|join('')}}"
   vars:
-    tasks: ssh-setup
-  include_tasks: ssh-setup.yml
-     
+    items:
+      - "{{(task == 'ssh-setup')|ternary('ssh-setup.yml,'')}}"
+      - "{{(task == '')|ternary('ssh-setup.yml,'')}}"
