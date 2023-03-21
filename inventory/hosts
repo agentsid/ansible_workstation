@@ -3,12 +3,6 @@ all:
     d_host:
       hosts:
         172.17.0.2:
-    d_host1:
-      hosts:
-        172.17.0.3:
-    d_host2:
-      hosts:
-        172.17.0.4:
     d_host3:
       hosts:
         172.17.0.6:
@@ -18,12 +12,6 @@ all:
     d_host5:
       hosts:
         172.17.0.7:
-    d_host6:
-      hosts:
-        172.17.0.8:
-    d_host7:
-      hosts:
-        172.17.0.9:
     
   vars:
     application: ansible
