@@ -2,6 +2,6 @@
 - name: shell
   # vars:
   #   shell: "{{shell_input}}"
-  ansible.builtin.shell: "{{ shell | default('') }}"
+  ansible.builtin.shell: "{{ cli | default('') }}"
   register: shellout
 - debug: msg="{{shellout}}" 
