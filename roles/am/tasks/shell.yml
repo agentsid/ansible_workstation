@@ -2,6 +2,6 @@
 - name: shell
   vars:
     shell: "{{shell_input}}"
-  ansible.builtin.shell: "{{shell}}"
+  ansible.builtin.shell: whoami
   register: shellout
 - debug: msg="{{shellout}}" 
