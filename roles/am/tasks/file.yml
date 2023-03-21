@@ -1,0 +1,10 @@
+- name: File
+  ansible.builtin.file:
+    path: "{{ rp_path | default('') }}"
+    dest: "{{ rp_dest | default('') }}"
+    owner: "{{ owner | default('ansible') }}"
+    group: "{{ owner | default('ansible') }}"
+    mode: '0755'
+    state: "{{state | default ('')}}"
+  register: fileout
+- debug: msg="{{fileout}}"

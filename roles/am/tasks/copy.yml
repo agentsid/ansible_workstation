@@ -1,0 +1,11 @@
+- name: Copy
+  ansible.builtin.copy:
+    src: "{{rp_src}}"
+    dest: "{{rp_dest}}"
+    owner: "{{ owner | default('ansible') }}"
+    group: "{{ group | default('ansible') }}"
+    mode: '0755'
+  ignore_errors: true
+  remote_src: true
+  register: copyout
+- debug: msg="{{copyout}}" 
