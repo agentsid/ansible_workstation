@@ -8,8 +8,8 @@
   #   env: "{{(env != '' | ternary ({{env}}|upper, ''))}}"
     
 
-  roles:
-    - common/parameters/shared/defaults
+  # roles:
+  #   - common/parameters/shared/defaults
   # environment: 
 
   pre_tasks:
@@ -23,8 +23,8 @@
         - name: Include Role
           include_role: 
             name: "{{ role | default('no_role') }}"
-    - name: Access Control
-      block:
+    # - name: Access Control
+    #   block:
       
 
 
