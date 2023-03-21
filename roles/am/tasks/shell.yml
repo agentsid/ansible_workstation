@@ -1,7 +1,5 @@
 ---
 - name: shell
-  # vars:
-  #   shell: "{{shell_input}}"
   ansible.builtin.shell: 'whoami'
   args:
     executable: /bin/bash
