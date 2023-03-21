@@ -1,6 +1,6 @@
 all:
   children:
-    d_host:
+    ansible:
       hosts:
         172.17.0.2:
     d_host3:
