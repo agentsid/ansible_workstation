@@ -6,5 +6,6 @@
     group: "{{ owner | default('ansible') }}"
     mode: '0755'
     state: "{{state | default ('')}}"
+  remote_src: true
   register: fileout
 - debug: msg="{{fileout}}"
