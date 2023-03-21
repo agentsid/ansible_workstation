@@ -3,7 +3,7 @@
 - name: >
      Executing Anisble Module "{{task}}"
   include_tasks:
-    file: "{{items|join('')}}"
+    file: "{{items}}" #|join('')}}"
   vars:
     items:
       - "{{(task == 'ping')|ternary('ping.yml,'')}}"
