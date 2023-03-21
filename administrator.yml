@@ -2,10 +2,11 @@
 - name: Administrator playbook
   hosts: "{{ hosts | default('all') }}"
   gather_facts: true
-  become: yes
+  vars:
+    empty_vars: { group:'',  
   roles:
-    - common/read_vars
-  environment: 
+    - common/parameters/shared/defaults
+  # environment: 
 
   pre_tasks:
   
