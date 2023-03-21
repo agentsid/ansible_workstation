@@ -1,8 +1,0 @@
-- name: >
-     Executing Anisble Role shell
-  include_tasks:
-    file: "{{items|join('')}}"
-  vars:
-    items:
-      - "{{(task == 'list')|ternary('ls.yml,'')}}"
-      - "{{(task == '')|ternary('ssh-setup.yml,'')}}"
