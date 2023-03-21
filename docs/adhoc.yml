@@ -23,3 +23,5 @@ ansible-playbook admin.yml --extra-vars " role=shell"
 
 # docker commands
 docker build -f dockerfile -t="dockerfile/ubuntu-img" .
+
+ansible_workstation$ ansible-playbook  administrator.yml  -e  "role='am' task='ping' hosts='d_host'"
