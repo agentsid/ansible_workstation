@@ -6,5 +6,5 @@
     file: "{{items|join('')}}"
   vars:
     items:
-      - "{{(task1 == 'ping')|ternary('ping.yml,'')}}"
-      - "{{(task2 == 'shell')|ternary('shell.yml,'')}}"
+      - "{{(task == 'ping')|ternary('ping.yml,'')}}"
+      #- "{{(task2 == 'shell')|ternary('shell.yml,'')}}"
