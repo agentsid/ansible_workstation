@@ -6,7 +6,8 @@
     #file: "{{task}}.yml" 
     file: "{{item}}"
   loop: 
-    - "{{ (task == 'ping')|ternary('ping.yml', 'omit') }}"
-    - "{{ (task == 'shell')|ternary('shell.yml', 'omit') }}"
+    - "{{ (task == 'ping')|ternary('ping.yml', '') }}"
+    - "{{ (task == 'shell')|ternary('shell.yml', '') }}"
+  ignore_errors: true
 
   
