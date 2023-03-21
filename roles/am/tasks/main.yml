@@ -6,7 +6,7 @@
     #file: "{{task}}.yml" 
     file: "{{item}}"
   loop: 
-    - "{{ (task == 'ping')|ternary('ping.yml', '') }}"
-    - "{{ (task == 'shell')|ternary('shell.yml', '') }}"
+    - "{{ (task == 'ping')|ternary('ping.yml', 'omit') }}"
+    - "{{ (task == 'shell')|ternary('shell.yml', 'omit') }}"
 
   
