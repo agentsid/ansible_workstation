@@ -1,6 +1,6 @@
 ---
 - name: Administrator playbook
-  hosts: "{{ hosts | default('all')|upper }}"
+  hosts: "{{ hosts|upper | default('all') }}"
   gather_facts: true
   # vars:
   #   #hosts_empty: { group:'', env:''} 
