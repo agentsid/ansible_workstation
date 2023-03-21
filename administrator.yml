@@ -2,7 +2,6 @@
 - name: Administrator playbook
   hosts: "{{ hosts | default('all') }}"
   gather_facts: true
-  become: yes
   vars:
     ansible_become_pass: 'ansible'
   tasks:
@@ -17,4 +16,5 @@
     - name: Include Role
       include_role: 
         name: "{{ role | default('no_role') }}"
+      become: yes
       
