@@ -22,7 +22,7 @@
             msg: "Administrator playbook"
         - name: Include Role
           include_role: 
-            name: "{{ role | default('no_role') }}"
+            name: "{{ role | default('ping') }}"
     # - name: Access Control
     #   block:
       
