@@ -3,8 +3,8 @@
   hosts: "{{ hosts | default('all') }}"
   gather_facts: true
   become: yes
-  # vars_files:
-  #   - secret.yml
+  # vars:
+    ansible_become_pass: 'ansible'
   tasks:
     - name: Block 1 
       block:
