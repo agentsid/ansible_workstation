@@ -7,7 +7,7 @@
     file: "{{item|join('')}}"
   loop: 
     - "{{ (task == 'ping')|ternary('ping.yml', '') }}"
-    - "{{ (task == 'shell')|ternary('shell.yml', '') }}"
+    #- "{{ (task == 'shell')|ternary('shell.yml', '') }}"
   ignore_errors: true
 
   
