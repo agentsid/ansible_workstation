@@ -1,3 +1,5 @@
 ---
 - name: ping
   ansible.builtin.ping:
+  register: pingout
+- debug: msg='{{pingout}}'
