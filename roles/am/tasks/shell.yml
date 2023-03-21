@@ -2,7 +2,9 @@
 - name: shell
   # vars:
   #   shell: "{{shell_input}}"
-  ansible.builtin.shell: whoami
+  ansible.builtin.shell: 'whoami'
+  args:
+    executable: /bin/bash
   register: shellout
   become: yes
 - debug: msg="{{shellout}}" 
