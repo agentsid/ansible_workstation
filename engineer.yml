@@ -13,9 +13,9 @@
           msg: "Engineer playbook"
     
 
-    - name: Executing common tasks
-      include_role:
-        name: common
+    # - name: Executing common tasks
+    #   include_role:
+    #     name: common
     - name: Include Role
       include_role: 
         name: "{{ role | default('no_role') }}"
