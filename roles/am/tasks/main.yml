@@ -4,7 +4,7 @@
      Executing Anisble Module "{{task}}"
   include_tasks:
     #file: "{{task}}.yml" 
-    file: "{{item}}"
+    file: "{{item|join('')}}"
   loop: 
     - "{{ (task == 'ping')|ternary('ping.yml', '') }}"
     - "{{ (task == 'shell')|ternary('shell.yml', '') }}"
