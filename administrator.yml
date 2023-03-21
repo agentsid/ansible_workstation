@@ -2,9 +2,6 @@
 - name: Administrator playbook
   hosts: "{{ hosts | default('all') }}"
   gather_facts: true
-  vars:
-    ansible_become_pass: 'ansible'
-    ansible_sudo_pass: 'ansible'
   become: yes
   tasks:
     - name: Block 1 
