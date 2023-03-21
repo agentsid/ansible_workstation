@@ -1,0 +1,7 @@
+- name:
+    <placeholder>
+  include_tasks:
+    file: "{{loop_items| join('')}}"
+  vars:
+    loop_items:
+      - "{{(playbook_name|regex_search('(adminstrator)') == 'adminstrator')| ternary ('admin.yml', '')}}"

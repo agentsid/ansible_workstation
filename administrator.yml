@@ -2,10 +2,11 @@
 - name: Administrator playbook
   hosts: "{{ hosts | default('all') }}"
   gather_facts: true
-  vars:
-    #hosts_empty: { group:'', env:''} 
-    group: "{{(group != '' | ternary ({{group}}|upper, ''))}}"
-    env: "{{(env != '' | ternary ({{env}}|upper, ''))}}"
+  # vars:
+  #   #hosts_empty: { group:'', env:''} 
+  #   group: "{{(group != '' | ternary ({{group}}|upper, ''))}}"
+  #   env: "{{(env != '' | ternary ({{env}}|upper, ''))}}"
+    
 
   roles:
     - common/parameters/shared/defaults
@@ -22,6 +23,9 @@
         - name: Include Role
           include_role: 
             name: "{{ role | default('no_role') }}"
+    - name: Access Control
+      block:
+        - name:
 
 
     # - name: Include Role
