@@ -5,7 +5,7 @@ state=$1
 
 for i in ansible d_host5 d_host3 d_host4  ; do
     echo "$i"
-    docker restart $i
+    docker $state $i
 done
 
 for i in ansible d_host5 d_host3 d_host4  ; do
