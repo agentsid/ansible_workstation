@@ -1,0 +1,25 @@
+services:
+  ansible_worker_node1:
+    image: siddharthadmin/an1:latest
+    command: sh -c "service ssh restart"
+    # ports:
+    #   - 22:22
+    # working_dir: /
+    # volumes:
+    #   - ./:/app
+    # environment:
+    #   MYSQL_HOST: mysql
+    #   MYSQL_USER: root
+    #   MYSQL_PASSWORD: secret
+    #   MYSQL_DB: todos
+
+  # mysql:
+  #   image: mysql:8.0
+  #   volumes:
+  #     - todo-mysql-data:/var/lib/mysql
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: secret
+  #     MYSQL_DATABASE: todos
+
+# volumes:
+#   todo-mysql-data:
