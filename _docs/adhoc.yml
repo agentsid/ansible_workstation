@@ -25,3 +25,7 @@ ansible-playbook admin.yml --extra-vars " role=shell"
 docker build -f dockerfile -t="dockerfile/ubuntu-img" .
 
 ansible_workstation$ ansible-playbook  administrator.yml  -e  "role='am' task='ping' hosts='d_host'"
+
+# mysql container
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=ready2go -d mysql:latest
+docker exec -it some-mysql bash
