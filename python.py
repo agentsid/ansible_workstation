@@ -1,10 +1,11 @@
-import pandas as pd
+import pandas
 import pyodbc
 import mysql.connector
 
 # Import CSV
 data = pandas.read_csv (r'~/docker_workstation/test.csv')   
 df = pandas.DataFrame(data)
+print(df)
 
 # Connect to SQL Server
 conn = pyodbc.connect('Driver={SQL Server};'
