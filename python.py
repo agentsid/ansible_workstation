@@ -1,4 +1,4 @@
-import pandas
+.
 import pyodbc
 import mysql.connector
 
