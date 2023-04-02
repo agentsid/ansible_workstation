@@ -6,7 +6,6 @@ cnx = mysql.connector.connect(
     user="root",
     password="readytogo",
     database="test",
-    Trusted_Connection="yes"
 )
 
 # Create a cursor object
