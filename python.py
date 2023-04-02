@@ -1,4 +1,3 @@
-.
 import pyodbc
 import mysql.connector
 

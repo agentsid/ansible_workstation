@@ -6,8 +6,8 @@ import mysql.connector
 
 # Connect to the MySQL container
 cnx = mysql.connector.connect(user='root', password='ready2go',
-                              host='172.20.0.5', port='3306',
-                              database='test')
+                              host='127.0.0.1', port='3306',
+                              database='mysql')
 
 # Create a cursor to execute SQL statements
 cursor = cnx.cursor()
