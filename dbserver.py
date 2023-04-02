@@ -1,3 +1,4 @@
+# import required libraries
 import mysql.connector
 
 # Connect to the MySQL container
