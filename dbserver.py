@@ -1,31 +1,22 @@
-import pandas as pd
 import mysql.connector
 
 # Connect to the MySQL container
-cnx = mysql.connector.connect(user='root', password='my_secret_password',
-                              host='127.0.0.1', port='3306',
-                              database='my_database')
-
-# Read the CSV file into a Pandas DataFrame
-df = pd.read_csv('cities.csv')
+cnx = mysql.connector.connect(user='root', password='ready2go',
+                              host='127.0.0.1', port='3306')
 
 # Create a cursor to execute SQL statements
 cursor = cnx.cursor()
-show databases;
-# Iterate over the rows in the DataFrame and execute an INSERT statement for each row
-# for i, row in df.iterrows():
-#     insert_row = f"INSERT INTO my_table (name, age) VALUES ('{row['name']}', {row['age']})"
-#     cursor.execute(insert_row)
 
-# Commit the changes
-cnx.commit()
+# Execute the SHOW DATABASES statement
+cursor.execute("SHOW DATABASES")
+
+# Fetch all the results
+results = cursor.fetchall()
+
+# Print the database names
+for db in results:
+    print(db[0])
 
 # Close the cursor and connection
 cursor.close()
 cnx.close()
-
-
-
-
-
-
