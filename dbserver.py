@@ -19,15 +19,15 @@ CREATE TABLE test (
 """
 
 # Execute the SHOW DATABASES statement
-cursor.execute("SHOW DATABASES")
+#cursor.execute("SHOW DATABASES")
 cursor.execute(create_table)
 
 # Fetch all the results
 results = cursor.fetchall()
 
 # Print the database names
-for db in results:
-    print(db[0])
+# for db in results:
+#     print(db[0])
 
 # Close the cursor and connection
 cursor.close()
