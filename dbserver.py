@@ -1,29 +1,21 @@
-Here's an example Python script that uses the mysql-connector-python library to create a table in a MySQL container:
-
-python
-Copy code
+import pandas as pd
 import mysql.connector
 
 # Connect to the MySQL container
-cnx = mysql.connector.connect(user='root', password='ready2go',
+cnx = mysql.connector.connect(user='root', password='my_secret_password',
                               host='127.0.0.1', port='3306',
-                              database='mysql')
+                              database='my_database')
+
+# Read the CSV file into a Pandas DataFrame
+df = pd.read_csv('cities.csv')
 
 # Create a cursor to execute SQL statements
 cursor = cnx.cursor()
-
-# Define the SQL statement to create a table
-create_table = """
-    CREATE TABLE my_table (
-        id INT NOT NULL AUTO_INCREMENT,
-        name VARCHAR(50) NOT NULL,
-        age INT,
-        PRIMARY KEY (id)
-    )
-"""
-
-# Execute the SQL statement to create the table
-cursor.execute(create_table)
+show databases;
+# Iterate over the rows in the DataFrame and execute an INSERT statement for each row
+# for i, row in df.iterrows():
+#     insert_row = f"INSERT INTO my_table (name, age) VALUES ('{row['name']}', {row['age']})"
+#     cursor.execute(insert_row)
 
 # Commit the changes
 cnx.commit()
@@ -31,3 +23,9 @@ cnx.commit()
 # Close the cursor and connection
 cursor.close()
 cnx.close()
+
+
+
+
+
+
