@@ -22,8 +22,11 @@ CREATE TABLE test (
 #cursor.execute("SHOW DATABASES")
 cursor.execute(create_table)
 
+# Commit the changes
+cnx.commit()
+
 # Fetch all the results
-results = cursor.fetchall()
+# results = cursor.fetchall()
 
 # Print the database names
 # for db in results:
