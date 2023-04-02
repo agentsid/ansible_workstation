@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+  nginx:
+    container_name: nginx
+    image: nginx
+    ports:
+      - '80:80'
+
+  mysqldb:
+    container_name: mysqldb
+    image: mysql
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_DATABASE: test
+      MYSQL_ROOT_PASSWORD: ready2go
+
+  ansible:
+    build: .
+    tty: true
+    restart: always
+    deploy:
+      replicas: 3
+    command: /bin/bash 
+    # ports:
+    #   - "8000:8000"
+    
